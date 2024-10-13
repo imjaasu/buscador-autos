@@ -112,6 +112,22 @@ function filtrarAuto(){
     // console.log(resultado);
 
     mostrarAutos(resultado);
+
+    if(resultado.length){
+        mostrarAutos(resultado);
+    } else{
+        noResultado();
+    }
+}
+
+function noResultado(){
+
+    limpiarHTML();
+
+    const noResultado = document.createElement('DIV');
+    noResultado.classList.add('alerta', 'error');
+    noResultado.textContent = 'No hay resultados';
+    resultado.appendChild(noResultado);
 }
 
 function filtrarMarca(auto){
